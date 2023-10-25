@@ -13,12 +13,6 @@ const TodoList = () => {
 		}
 	};
 
-	const handleDeleteTodo = (index) => {
-		const newTodos = [...todos];
-		newTodos.splice(index, 1);
-		setTodos(newTodos);
-	};
-
 	const handleEnterKeyPress = (e) => {
 		if (e.key === "Enter") {
 			e.preventDefault();
@@ -40,7 +34,7 @@ const TodoList = () => {
 			<button onClick={handleAddTodo}>Add</button>
 			<ul>
 				{todos.map((todo, index) => (
-					<li onClick={handleDeleteTodo} key={index}>
+					<li key={index}>
 						<span>{todo.text}</span>
 					</li>
 				))}
