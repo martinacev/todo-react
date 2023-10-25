@@ -46,13 +46,8 @@ h1 {
 		color: #747bff;
 	}
 	button {
-		background-color: red;
+		background-color: rgb(6, 49, 243);
 		color: white;
 		cursor: pointer;
 	}
-}
-
-li {
-	list-style: decimal;
-	color: red;
 }
