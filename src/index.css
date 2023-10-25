@@ -51,8 +51,3 @@ h1 {
 		cursor: pointer;
 	}
 }
-
-li {
-	list-style: decimal;
-	color: rgb(6, 49, 243);
-}

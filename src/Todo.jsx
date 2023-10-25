@@ -11,10 +11,8 @@ const TodoList = () => {
 		}
 	};
 
-	const handleDeleteTodo = (index) => {
-		const newTodos = [...todos];
-		newTodos.splice(index);
-		setTodos(newTodos);
+	const handleDeleteAll = () => {
+		setTodos([]);
 	};
 
 	const handleKeyPress = (event) => {
@@ -25,9 +23,6 @@ const TodoList = () => {
 
 	return (
 		<div>
-			<button onClick={handleDeleteTodo} className="deleteTodoItems">
-				delete ⨉
-			</button>
 			<h1>To-Do List</h1>
 			<input
 				type="text"
@@ -36,6 +31,9 @@ const TodoList = () => {
 				onKeyPress={handleKeyPress}
 			/>
 			<button onClick={handleAddTodo}>Add ✔</button>
+			<button onClick={handleDeleteAll} className="deleteTodoItems">
+				delete ⨉
+			</button>
 			<ul>
 				{todos.map((todo, index) => (
 					<li key={index}>
