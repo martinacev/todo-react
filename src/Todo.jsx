@@ -38,7 +38,7 @@ const TodoList = () => {
 			/>
 			<button onClick={handleAddTodo}>Add ✔</button>
 			<button onClick={handleDeleteAll} className="deleteTodoItems">
-				delete ⨉
+				Delete ⨉
 			</button>
 			<ul>
 				{todos.map((todo, index) => (
