@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const ListActions = ({ handleAddTodo, handleDeleteAll }) => {
 	return (
@@ -9,6 +9,11 @@ const ListActions = ({ handleAddTodo, handleDeleteAll }) => {
 			</button>
 		</div>
 	);
+};
+
+ListActions.propTypes = {
+	handleAddTodo: PropTypes.func.isRequired,
+	handleDeleteAll: PropTypes.func.isRequired,
 };
 
 export default ListActions;

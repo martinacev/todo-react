@@ -1,8 +1,9 @@
 import { useState } from "react";
 import ListActions from "./components/ListActions";
-import AddtodoInputs from "./components/AddTodoInputs";
+import AddtodoInput from "./components/AddTodoInput";
+import TodoList from "./components/TodoList";
 
-const TodoList = () => {
+const Todo = () => {
 	const [todos, setTodos] = useState([]);
 	const [newTodo, setNewTodo] = useState("");
 
@@ -23,28 +24,16 @@ const TodoList = () => {
 		setTodos(newTodos);
 	};
 
-	const handleKeyPress = (event) => {
-		if (event.key === "Enter") {
-			handleAddTodo();
-		}
-	};
-
 	return (
 		<div>
 			<h1>To-Do List</h1>
 			<div className="wrap">
-				<AddtodoInputs newTodo={newTodo} setNewTodo={setNewTodo} handleAddTodo={handleAddTodo} />
+				<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
 				<ListActions handleAddTodo={handleAddTodo} handleDeleteAll={handleDeleteAll} />
 			</div>
-			<ul>
-				{todos.map((todo, index) => (
-					<li onClick={() => handleDeleteItems(index)} key={index}>
-						<span>{todo.text}</span>
-					</li>
-				))}
-			</ul>
+			<TodoList handleDeleteItems={handleDeleteItems} todos={todos} />
 		</div>
 	);
 };
 
-export default TodoList;
+export default Todo;
