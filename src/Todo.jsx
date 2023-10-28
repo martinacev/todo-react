@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ListActions from "./components/ListActions";
+import AddtodoInputs from "./components/AddTodoInputs";
 
 const TodoList = () => {
 	const [todos, setTodos] = useState([]);
@@ -32,12 +33,7 @@ const TodoList = () => {
 		<div>
 			<h1>To-Do List</h1>
 			<div className="wrap">
-				<input
-					type="text"
-					value={newTodo}
-					onChange={(e) => setNewTodo(e.target.value)}
-					onKeyDown={handleKeyPress}
-				/>
+				<AddtodoInputs handleAddTodo={handleKeyPress} />
 				<ListActions handleAddTodo={handleAddTodo} handleDeleteAll={handleDeleteAll} />
 			</div>
 			<ul>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListActions = (handleAddTodo, handleDeleteAll) => {
+const ListActions = ({ handleAddTodo, handleDeleteAll }) => {
 	return (
 		<div>
 			<button onClick={handleAddTodo}>Add ✔</button>
