@@ -33,7 +33,7 @@ const TodoList = () => {
 		<div>
 			<h1>To-Do List</h1>
 			<div className="wrap">
-				<AddtodoInputs handleAddTodo={handleKeyPress} />
+				<AddtodoInputs newTodo={newTodo} setNewTodo={setNewTodo} handleAddTodo={handleAddTodo} />
 				<ListActions handleAddTodo={handleAddTodo} handleDeleteAll={handleDeleteAll} />
 			</div>
 			<ul>

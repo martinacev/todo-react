@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AddtodoInputs = ({ handleAddTodo, handleKeyPress }) => {
-	const [newTodo, setNewTodo] = useState("");
-
+const AddtodoInputs = ({ newTodo, setNewTodo, handleAddTodo }) => {
 	const handleKeyPress = (event) => {
 		if (event.key === "Enter") {
-			handleAddTodo(newTodo.trim());
-			setNewTodo();
+			handleAddTodo();
 		}
 	};
 
@@ -14,4 +11,5 @@ const AddtodoInputs = ({ handleAddTodo, handleKeyPress }) => {
 		<input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} onKeyDown={handleKeyPress} />
 	);
 };
+
 export default AddtodoInputs;
