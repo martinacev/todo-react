@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ListActions from "./components/ListActions";
 
 const TodoList = () => {
 	const [todos, setTodos] = useState([]);
@@ -30,16 +31,15 @@ const TodoList = () => {
 	return (
 		<div>
 			<h1>To-Do List</h1>
-			<input
-				type="text"
-				value={newTodo}
-				onChange={(e) => setNewTodo(e.target.value)}
-				onKeyPress={handleKeyPress}
-			/>
-			<button onClick={handleAddTodo}>Add ✔</button>
-			<button onClick={handleDeleteAll} className="deleteTodoItems">
-				Delete ⨉
-			</button>
+			<div className="wrap">
+				<input
+					type="text"
+					value={newTodo}
+					onChange={(e) => setNewTodo(e.target.value)}
+					onKeyDown={handleKeyPress}
+				/>
+				<ListActions handleAddTodo={handleAddTodo} handleDeleteAll={handleDeleteAll} />
+			</div>
 			<ul>
 				{todos.map((todo, index) => (
 					<li onClick={() => handleDeleteItems(index)} key={index}>
