@@ -9,7 +9,12 @@ const Todo = () => {
 
 	const handleAddTodo = () => {
 		if (newTodo.trim() !== "") {
-			setTodos([...todos, { text: newTodo.trim() }]);
+			const newTodoItem = {
+				id: new Date().getTime().toString(),
+				text: newTodo.trim(),
+			};
+
+			setTodos([...todos, newTodoItem]);
 			setNewTodo("");
 		}
 	};
@@ -18,9 +23,8 @@ const Todo = () => {
 		setTodos([]);
 	};
 
-	const handleDeleteItems = (index) => {
-		const newTodos = [...todos];
-		newTodos.splice(index, 1);
+	const handleDeleteItems = (id) => {
+		const newTodos = todos.filter((todo) => todo.id !== id);
 		setTodos(newTodos);
 	};
 
