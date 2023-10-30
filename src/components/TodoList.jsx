@@ -4,7 +4,7 @@ const TodoList = ({ handleDeleteItems, todos }) => {
 	return (
 		<ul>
 			{todos.map((todo, index) => (
-				<li onClick={() => handleDeleteItems(index)} key={index}>
+				<li onClick={() => handleDeleteItems(todo.id)} key={index}>
 					<span>{todo.text}</span>
 				</li>
 			))}

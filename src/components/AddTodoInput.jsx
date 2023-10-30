@@ -11,7 +11,7 @@ const AddtodoInput = ({ value, setValue, handleAdd }) => {
 };
 
 AddtodoInput.propTypes = {
-	value: PropTypes.func.isRequired,
+	value: PropTypes.string.isRequired,
 	setValue: PropTypes.func.isRequired,
 	handleAdd: PropTypes.func.isRequired,
 };
