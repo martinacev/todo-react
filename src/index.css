@@ -51,3 +51,7 @@ h1 {
 		cursor: pointer;
 	}
 }
+
+li {
+	list-style-type: decimal;
+}
