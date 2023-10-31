@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 const Todo = () => {
 	const [todos, setTodos] = useState([]);
 	const [newTodo, setNewTodo] = useState("");
+	const [selectedItems, setSelectedItems] = useState([]);
 
 	const handleAddTodo = () => {
 		if (newTodo.trim() !== "") {
@@ -28,14 +29,42 @@ const Todo = () => {
 		setTodos(newTodos);
 	};
 
+	const handleToggSelection = (id) => {
+		if (selectedItems.includes(id)) {
+			setSelectedItems(selectedItems.filter((item) => item.id !== id));
+		} else {
+			setSelectedItems([...selectedItems, id]);
+		}
+	};
+
+	const handleDeleteSelected = () => {
+		const newTodos = todos.filter((todo) => !selectedItems.includes(todo.id));
+		setTodos(newTodos);
+		setSelectedItems([]);
+	};
+
 	return (
 		<div>
 			<h1>To-Do List</h1>
 			<div className="wrap">
 				<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
-				<ListActions handleAddTodo={handleAddTodo} handleDeleteAll={handleDeleteAll} />
+				<ListActions
+					handleAddTodo={handleAddTodo}
+					handleDeleteAll={handleDeleteAll}
+					handleDeleteSelected={handleDeleteSelected}
+				/>
 			</div>
-			<TodoList handleDeleteItems={handleDeleteItems} todos={todos} />
+			<TodoList
+				handleToggleSelection={handleToggSelection}
+				selectedItems={selectedItems}
+				handleDeleteItems={handleDeleteItems}
+				todos={todos}
+			/>
+			<div className="button-container">
+				<button className="deleteTodoItems" onClick={handleDeleteSelected}>
+					Delete Selected ⨉
+				</button>
+			</div>
 		</div>
 	);
 };

@@ -9,13 +9,11 @@
 	background-color: red;
 }
 
-li:hover::after {
-	content: "X";
-	position: absolute;
-	margin: 0 5px;
-	color: red;
-}
-
 .wrap {
 	display: flex;
+}
+
+.button-container {
+	display: flex;
+	justify-content: end;
 }

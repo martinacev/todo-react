@@ -14,6 +14,7 @@ const ListActions = ({ handleAddTodo, handleDeleteAll }) => {
 ListActions.propTypes = {
 	handleAddTodo: PropTypes.func.isRequired,
 	handleDeleteAll: PropTypes.func.isRequired,
+	handleDeleteSelected: PropTypes.func.isRequired,
 };
 
 export default ListActions;
