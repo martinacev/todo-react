@@ -60,11 +60,13 @@ const Todo = () => {
 				handleDeleteItems={handleDeleteItems}
 				todos={todos}
 			/>
-			<div className="button-container">
-				<button className="deleteTodoItems" onClick={handleDeleteSelected}>
-					Delete Selected ⨉
-				</button>
-			</div>
+			{todos.length > 1 && (
+				<div className="button-container">
+					<button className="deleteTodoItems" onClick={handleDeleteSelected}>
+						Delete Selected ⨉
+					</button>
+				</div>
+			)}
 		</div>
 	);
 };

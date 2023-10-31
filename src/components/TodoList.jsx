@@ -1,15 +1,11 @@
 import PropTypes from "prop-types";
 
-const TodoList = ({ todos, handleToggleSelection, selectedItems }) => {
+const TodoList = ({ todos, handleToggleSelection }) => {
 	return (
 		<ul>
 			{todos.map((todo) => (
 				<li key={todo.id}>
-					<input
-						type="checkbox"
-						checked={selectedItems.includes(todo.id)}
-						onChange={() => handleToggleSelection(todo.id)}
-					/>
+					<input type="checkbox" onChange={() => handleToggleSelection(todo.id)} />
 					{todo.text}
 				</li>
 			))}
