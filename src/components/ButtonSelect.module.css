@@ -1,0 +1,8 @@
+.button {
+	display: flex;
+	justify-content: end;
+}
+
+.select {
+	background-color: red;
+}
