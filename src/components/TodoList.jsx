@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 
-const TodoList = ({ todos, handleToggleSelection }) => {
+const TodoList = ({ todos, handleToggleSelection, handleDeleteItems }) => {
 	return (
 		<ul>
 			{todos.map((todo) => (
 				<li key={todo.id}>
 					<input type="checkbox" onChange={() => handleToggleSelection(todo.id)} />
 					{todo.text}
+					<span onClick={() => handleDeleteItems(todo.id)}> X</span>
 				</li>
 			))}
 		</ul>
