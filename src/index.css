@@ -91,3 +91,9 @@ span {
 .todoName {
 	color: rgba(255, 255, 255, 0.719);
 }
+
+input {
+	border: 2px solid red;
+	border-radius: 20px;
+	padding: 8px;
+}
