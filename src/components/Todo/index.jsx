@@ -48,7 +48,7 @@ const Todo = () => {
 	return (
 		<div className="main">
 			<ListTitle />
-			<h1>To-Do List</h1>
+			<h1 className="todoName">To-Do List</h1>
 			<div className="wrap">
 				<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
 				<ListActions
