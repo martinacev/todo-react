@@ -1,7 +1,9 @@
 import { useState } from "react";
-import ListActions from "./components/ListActions";
-import AddtodoInput from "./components/AddTodoInput";
-import TodoList from "./components/TodoList";
+import ListActions from "./ListActions";
+import AddtodoInput from "./AddTodoInput";
+import TodoList from "./TodoList";
+import ListTitle from "./ListTitle";
+import ButtonSelect from "./ButtonSelect";
 
 const Todo = () => {
 	const [todos, setTodos] = useState([]);
@@ -45,11 +47,7 @@ const Todo = () => {
 
 	return (
 		<div className="main">
-			<div className="listTitle">
-				<h2>List Title</h2>
-				<input className="inputStyle" type="text" />
-			</div>
-
+			<ListTitle />
 			<h1>To-Do List</h1>
 			<div className="wrap">
 				<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
@@ -65,13 +63,7 @@ const Todo = () => {
 				handleDeleteItems={handleDeleteItems}
 				todos={todos}
 			/>
-			{todos.length > 1 && (
-				<div className="button-container">
-					<button className="deleteTodoItems" onClick={handleDeleteSelected}>
-						Delete Selected ⨉
-					</button>
-				</div>
-			)}
+			{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
 		</div>
 	);
 };
