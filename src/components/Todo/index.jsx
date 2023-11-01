@@ -1,9 +1,9 @@
 import { useState } from "react";
-import ListActions from "./components/ListActions";
-import AddtodoInput from "./components/AddTodoInput";
-import TodoList from "./components/TodoList";
-import ListTitle from "./components/ListTitle";
-import ButtonSelect from "./components/ButtonSelect";
+import ListActions from "./ListActions";
+import AddtodoInput from "./AddTodoInput";
+import TodoList from "./TodoList";
+import ListTitle from "./ListTitle";
+import ButtonSelect from "./ButtonSelect";
 
 const Todo = () => {
 	const [todos, setTodos] = useState([]);
