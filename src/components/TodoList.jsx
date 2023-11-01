@@ -7,7 +7,7 @@ const TodoList = ({ todos, handleToggleSelection, handleDeleteItems }) => {
 				<li key={todo.id}>
 					<input type="checkbox" onChange={() => handleToggleSelection(todo.id)} />
 					{todo.text}
-					<span onClick={() => handleDeleteItems(todo.id)}> X</span>
+					<span onClick={() => handleDeleteItems(todo.id)}> ⨉</span>
 				</li>
 			))}
 		</ul>
