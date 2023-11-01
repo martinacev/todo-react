@@ -55,3 +55,8 @@ h1 {
 li {
 	list-style-type: decimal;
 }
+
+span {
+	color: red;
+	cursor: pointer;
+}
