@@ -5,15 +5,18 @@ import TodoList from "./TodoList";
 import ListTitle from "./ListTitle";
 import ButtonSelect from "./ButtonSelect";
 
+import { v4 as uuidv4 } from "uuid";
+
 const Todo = () => {
 	const [todos, setTodos] = useState([]);
 	const [newTodo, setNewTodo] = useState("");
 	const [selectedItems, setSelectedItems] = useState([]);
 
 	const handleAddTodo = () => {
+		uuidv4();
 		if (newTodo.trim() !== "") {
 			const newTodoItem = {
-				id: new Date().getTime().toString(),
+				id: uuidv4(),
 				text: newTodo.trim(),
 			};
 
