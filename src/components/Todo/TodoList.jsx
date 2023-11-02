@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import classes from "./TodoList.module.css";
 
 const TodoList = ({ todos, handleToggleSelection, handleDeleteItems }) => {
 	return (
-		<ul>
+		<ul className={classes.sea}>
 			{todos.map((todo) => (
 				<li key={todo.id}>
 					<input type="checkbox" onChange={() => handleToggleSelection(todo.id)} />
