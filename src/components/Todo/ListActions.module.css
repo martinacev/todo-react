@@ -11,8 +11,6 @@
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
-
-	margin: 5px;
 }
 
 .button:before {
@@ -61,4 +59,6 @@
 	flex-direction: row;
 	align-items: center;
 	height: 30px;
+
+	gap: 10px;
 }

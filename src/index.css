@@ -76,12 +76,13 @@ span {
 
 	height: auto;
 	padding: 20px;
-
-	margin-top: 300px;
 }
 
 .wrap {
 	display: flex;
+	align-items: center;
+
+	gap: 10px;
 }
 
 #root {
@@ -106,5 +107,4 @@ input {
 .todo-container {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 500px;
 }
