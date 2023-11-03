@@ -1,4 +1,4 @@
 .input {
 	width: 250px;
-	height: auto;
+	max-height: 144px;
 }
