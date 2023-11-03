@@ -3,12 +3,14 @@ import classes from "./TodoList.module.css";
 
 const TodoList = ({ todos, handleToggleSelection, handleDeleteItems }) => {
 	return (
-		<ul className={classes.sea}>
+		<ul className={classes.items}>
 			{todos.map((todo) => (
 				<li key={todo.id}>
 					<input type="checkbox" onChange={() => handleToggleSelection(todo.id)} />
 					{todo.text}
-					<span onClick={() => handleDeleteItems(todo.id)}> ⨉</span>
+					<span className={classes.deleteButton} onClick={() => handleDeleteItems(todo.id)}>
+						⨉
+					</span>
 				</li>
 			))}
 		</ul>

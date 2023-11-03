@@ -1,9 +1,9 @@
 .title {
 	position: fixed;
 	top: 0;
+	left: 0;
+	width: 100%;
 	margin-top: 50px;
-	align-items: center;
-	justify-content: center;
 }
 
 .input {
