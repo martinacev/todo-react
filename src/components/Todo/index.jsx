@@ -5,15 +5,18 @@ import TodoList from "./TodoList";
 import ListTitle from "./ListTitle";
 import ButtonSelect from "./ButtonSelect";
 
+import { v4 as uuidv4 } from "uuid";
+
 const Todo = () => {
 	const [todos, setTodos] = useState([]);
 	const [newTodo, setNewTodo] = useState("");
 	const [selectedItems, setSelectedItems] = useState([]);
 
 	const handleAddTodo = () => {
+		uuidv4();
 		if (newTodo.trim() !== "") {
 			const newTodoItem = {
-				id: new Date().getTime().toString(),
+				id: uuidv4(),
 				text: newTodo.trim(),
 			};
 
@@ -31,7 +34,7 @@ const Todo = () => {
 		setTodos(newTodos);
 	};
 
-	const handleToggSelection = (id) => {
+	const handleToggleSelection = (id) => {
 		if (selectedItems.includes(id)) {
 			setSelectedItems(selectedItems.filter((item) => item.id !== id));
 		} else {
@@ -46,24 +49,26 @@ const Todo = () => {
 	};
 
 	return (
-		<div className="main">
+		<div className="todo-container">
 			<ListTitle />
-			<h1>To-Do List</h1>
-			<div className="wrap">
-				<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
-				<ListActions
-					handleAddTodo={handleAddTodo}
-					handleDeleteAll={handleDeleteAll}
-					handleDeleteSelected={handleDeleteSelected}
+			<div className="main">
+				<h1 className="todoName">To-Do List</h1>
+				<div className="wrap">
+					<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
+					<ListActions
+						handleAddTodo={handleAddTodo}
+						handleDeleteAll={handleDeleteAll}
+						handleDeleteSelected={handleDeleteSelected}
+					/>
+				</div>
+				<TodoList
+					handleToggleSelection={handleToggleSelection}
+					selectedItems={selectedItems}
+					handleDeleteItems={handleDeleteItems}
+					todos={todos}
 				/>
+				{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
 			</div>
-			<TodoList
-				handleToggleSelection={handleToggSelection}
-				selectedItems={selectedItems}
-				handleDeleteItems={handleDeleteItems}
-				todos={todos}
-			/>
-			{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
 		</div>
 	);
 };

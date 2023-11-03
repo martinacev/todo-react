@@ -1,0 +1,17 @@
+.items {
+	max-height: 300px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+}
+
+.deleteButton {
+	display: none;
+	cursor: pointer;
+}
+
+li:hover .deleteButton {
+	display: inline;
+}

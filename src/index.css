@@ -30,6 +30,8 @@ body {
 	min-height: 100vh;
 	background-color: #1a1a1a;
 	color: white;
+
+	background-image: linear-gradient(to right, red, white);
 }
 
 h1 {
@@ -53,7 +55,7 @@ h1 {
 }
 
 li {
-	list-style-type: decimal;
+	list-style: decimal;
 }
 
 span {
@@ -66,10 +68,23 @@ span {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+
+	background-color: rgba(0, 0, 0, 0.589);
+	border: 2px solid rgba(0, 0, 0, 0.137);
+	border-radius: 20px;
+	box-shadow: 15px 5px 5px rgba(0, 0, 0, 0.452);
+
+	height: auto;
+	padding: 20px;
+
+	margin-top: 100px;
 }
 
 .wrap {
 	display: flex;
+	align-items: center;
+
+	gap: 10px;
 }
 
 #root {
@@ -77,4 +92,25 @@ span {
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
+}
+
+.todoName {
+	color: rgba(255, 255, 255, 0.719);
+}
+
+input {
+	border: 2px solid red;
+	border-radius: 20px;
+	padding: 8px;
+
+	background-color: rgba(255, 255, 255, 0.719);
+}
+
+.todo-container {
+	display: flex;
+	flex-direction: column;
+}
+
+ul {
+	overflow: auto;
 }
