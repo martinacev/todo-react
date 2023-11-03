@@ -110,3 +110,8 @@ input {
 	display: flex;
 	flex-direction: column;
 }
+
+ul {
+	overflow: auto;
+	height: 100px;
+}
