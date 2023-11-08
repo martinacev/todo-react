@@ -6,6 +6,8 @@ import ListTitle from "./ListTitle";
 import ButtonSelect from "./ButtonSelect";
 
 import { v4 as uuidv4 } from "uuid";
+import { addList } from "../../store/actions/todo";
+import { useDispatch } from "react-redux";
 
 const Todo = () => {
 	const [todos, setTodos] = useState([]);
@@ -61,7 +63,7 @@ const Todo = () => {
 
 	return (
 		<div className="todo-container">
-			<ListTitle />
+			<ListTitle setTitle={setTitle} />
 			<div className="main">
 				<h1 className="todoName">To-Do List</h1>
 				<div className="wrap">
@@ -80,6 +82,7 @@ const Todo = () => {
 				/>
 				{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
 			</div>
+			<button onClick={handleSaveList}></button>
 		</div>
 	);
 };
