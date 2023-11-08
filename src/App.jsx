@@ -1,13 +1,19 @@
 import "./index.css";
-import TodoList from "./components/Todo";
-
 import { Provider } from "react-redux";
 import store from "./store/store";
+import CreateTodo from "./pages/CreateTodo";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
 	return (
 		<Provider store={store}>
-			<TodoList />
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<CreateTodo />} />
+					<Route path="/home" element={<Home />} />
+				</Routes>
+			</BrowserRouter>
 		</Provider>
 	);
 }

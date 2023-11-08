@@ -4,6 +4,7 @@ import AddtodoInput from "./AddTodoInput";
 import TodoList from "./TodoList";
 import ListTitle from "./ListTitle";
 import ButtonSelect from "./ButtonSelect";
+import classes from "./ListActions.module.css";
 
 import { v4 as uuidv4 } from "uuid";
 import { addList } from "../../store/actions/todo";
@@ -81,7 +82,9 @@ const Todo = () => {
 					todos={todos}
 				/>
 				{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
-				<button onClick={handleSaveList}>Save List</button>
+				<button className={classes.button} onClick={handleSaveList}>
+					Save List
+				</button>
 			</div>
 		</div>
 	);
