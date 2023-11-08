@@ -11,6 +11,9 @@ const Todo = () => {
 	const [todos, setTodos] = useState([]);
 	const [newTodo, setNewTodo] = useState("");
 	const [selectedItems, setSelectedItems] = useState([]);
+	const [title, setTitle] = useState();
+
+	const dispatch = useDispatch();
 
 	const handleAddTodo = () => {
 		uuidv4();
@@ -46,6 +49,14 @@ const Todo = () => {
 		const newTodos = todos.filter((todo) => !selectedItems.includes(todo.id));
 		setTodos(newTodos);
 		setSelectedItems([]);
+	};
+
+	const handleSaveList = () => {
+		const list = {
+			title: title,
+			content: todos,
+		};
+		dispatch(addList(list));
 	};
 
 	return (
