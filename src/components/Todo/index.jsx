@@ -81,8 +81,8 @@ const Todo = () => {
 					todos={todos}
 				/>
 				{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
+				<button onClick={handleSaveList}>Save List</button>
 			</div>
-			<button onClick={handleSaveList}></button>
 		</div>
 	);
 };
