@@ -5,10 +5,15 @@ import TodoList from "./TodoList";
 import ListTitle from "./ListTitle";
 import ButtonSelect from "./ButtonSelect";
 
+import { v4 as uuidv4 } from "uuid";
+
 const Todo = () => {
 	const [todos, setTodos] = useState([]);
 	const [newTodo, setNewTodo] = useState("");
 	const [selectedItems, setSelectedItems] = useState([]);
+	const [title, setTitle] = useState();
+
+	const dispatch = useDispatch();
 
 	const handleAddTodo = () => {
 		if (newTodo.trim() !== "") {
@@ -45,25 +50,35 @@ const Todo = () => {
 		setSelectedItems([]);
 	};
 
+	const handleSaveList = () => {
+		const list = {
+			title: title,
+			content: todos,
+		};
+		dispatch(addList(list));
+	};
+
 	return (
-		<div className="main">
+		<div className="todo-container">
 			<ListTitle />
-			<h1>To-Do List</h1>
-			<div className="wrap">
-				<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
-				<ListActions
-					handleAddTodo={handleAddTodo}
-					handleDeleteAll={handleDeleteAll}
-					handleDeleteSelected={handleDeleteSelected}
+			<div className="main">
+				<h1 className="todoName">To-Do List</h1>
+				<div className="wrap">
+					<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
+					<ListActions
+						handleAddTodo={handleAddTodo}
+						handleDeleteAll={handleDeleteAll}
+						handleDeleteSelected={handleDeleteSelected}
+					/>
+				</div>
+				<TodoList
+					handleToggleSelection={handleToggleSelection}
+					selectedItems={selectedItems}
+					handleDeleteItems={handleDeleteItems}
+					todos={todos}
 				/>
+				{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
 			</div>
-			<TodoList
-				handleToggleSelection={handleToggSelection}
-				selectedItems={selectedItems}
-				handleDeleteItems={handleDeleteItems}
-				todos={todos}
-			/>
-			{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
 		</div>
 	);
 };
