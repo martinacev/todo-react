@@ -54,8 +54,16 @@ h1 {
 	}
 }
 
-li {
+ol li {
 	list-style: decimal;
+}
+
+ul {
+	padding-left: 0;
+}
+
+ul li {
+	list-style: none;
 }
 
 span {

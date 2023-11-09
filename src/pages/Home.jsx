@@ -1,19 +1,16 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import classes from "../components/Todo/ListActions.module.css";
+import { useSelector } from "react-redux";
+import DashboardList from "../components/DashboardList";
 
-const Home = ({ lists }) => {
+const Home = () => {
+	const lists = useSelector((state) => state.todoLists);
+
 	return (
 		<div>
-			<button className={classes.button}>
-				<Link to="/" style={{ color: "white" }}>
-					Back
-				</Link>
-			</button>
 			<h1>Home Page</h1>
 			<div>
 				{lists.map((list) => (
-					<div key={list.title}>{list.title}</div>
+					<DashboardList key={list.title} title={list.title} content={list.content} />
 				))}
 			</div>
 		</div>
