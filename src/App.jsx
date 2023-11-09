@@ -4,6 +4,7 @@ import store from "./store/store";
 import CreateTodo from "./pages/CreateTodo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import DetailView from "./pages/DetailView";
 
 function App() {
 	return (
@@ -11,7 +12,8 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<CreateTodo />} />
-					<Route path="/home" element={<Home />} />
+					<Route path="/home" element={<Home lists />} />
+					<Route path="/detailview" element={<DetailView />} />
 				</Routes>
 			</BrowserRouter>
 		</Provider>
