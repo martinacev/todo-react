@@ -2,12 +2,22 @@ import TodoList from "../components/Todo/TodoList";
 import ListTitle from "../components/Todo/ListTitle";
 import { Link, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
+import classes from "../components/Todo/ListActions.module.css";
 
 const DetailView = ({ lists }) => {
 	const { title } = useParams();
 
 	if (!lists || !Array.isArray(lists)) {
-		return <div>No details available</div>;
+		return (
+			<>
+				<div>No details available</div>
+				<button className={classes.button}>
+					<Link to="/" style={{ color: "white" }}>
+						Back
+					</Link>
+				</button>
+			</>
+		);
 	}
 
 	const list = lists.find((l) => l.title === title);
@@ -23,9 +33,11 @@ const DetailView = ({ lists }) => {
 			) : (
 				<div>List not found</div>
 			)}
-			<Link to="/">
-				<button>Back</button>
-			</Link>
+			<button className={classes.button}>
+				<Link to="/" style={{ color: "white" }}>
+					Back
+				</Link>
+			</button>
 		</div>
 	);
 };
