@@ -1,19 +1,27 @@
 import TodoList from "../components/Todo/TodoList";
 import ListTitle from "../components/Todo/ListTitle";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const DetailView = ({ match, lists }) => {
-	const list = lists.find((l) => l.title === match.params.title);
+const DetailView = ({ lists }) => {
+	const { title } = useParams();
+
+	if (!lists || !Array.isArray(lists)) {
+		return <div>No details available</div>;
+	}
+
+	const list = lists.find((l) => l.title === title);
 
 	return (
 		<div>
 			<h1>Detail View Page</h1>
-			{list && (
+			{list ? (
 				<>
 					<ListTitle title={list.title} />
 					<TodoList todos={list.content} />
 				</>
+			) : (
+				<div>List not found</div>
 			)}
 			<Link to="/">
 				<button>Back</button>
@@ -25,6 +33,5 @@ const DetailView = ({ match, lists }) => {
 export default DetailView;
 
 DetailView.propTypes = {
-	match: PropTypes.func.isRequired,
-	lists: PropTypes.array.isRequired,
+	lists: PropTypes.array,
 };

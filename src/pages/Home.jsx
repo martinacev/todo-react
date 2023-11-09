@@ -1,18 +1,15 @@
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import ListTitle from "../components/Todo/ListTitle";
+import { Link } from "react-router-dom";
 
 const Home = ({ lists }) => {
+	console.log("lists:", lists);
 	return (
 		<div>
 			<h1>Home Page</h1>
+			<Link to="/">Back</Link>
 			<div>
 				{lists.map((list) => (
-					<Link to={`/detail/${list.title}`} key={list.title}>
-						<div>
-							<ListTitle title={list.title} />
-						</div>
-					</Link>
+					<div key={list.title}>{list.title}</div>
 				))}
 			</div>
 		</div>
@@ -22,5 +19,5 @@ const Home = ({ lists }) => {
 export default Home;
 
 Home.propTypes = {
-	lists: PropTypes.func.isRequired,
+	lists: PropTypes.array.isRequired,
 };

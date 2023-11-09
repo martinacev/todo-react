@@ -7,12 +7,13 @@ import Home from "./pages/Home";
 import DetailView from "./pages/DetailView";
 
 function App() {
+	const lists = [{ title: "", content: "" }];
 	return (
 		<Provider store={store}>
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<CreateTodo />} />
-					<Route path="/home" element={<Home lists />} />
+					<Route path="/home" element={<Home lists={lists} />} />
 					<Route path="/detailview" element={<DetailView />} />
 				</Routes>
 			</BrowserRouter>
