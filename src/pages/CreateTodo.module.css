@@ -1,5 +1,5 @@
 .button {
-	background-color: rgba(255, 3, 3, 0.63);
+	background-color: gray;
 	border: 1px solid rgba(0, 0, 0, 0.377);
 	box-shadow: 15px 5px 5px rgba(0, 0, 0, 0.452);
 	height: 40px;
@@ -8,12 +8,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-top: 5px;
-	margin-left: 10px;
 }
 
 .backbtn {
@@ -24,7 +18,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 10px;
+	padding: 20px;
 	width: 100px;
 	height: auto;
 }

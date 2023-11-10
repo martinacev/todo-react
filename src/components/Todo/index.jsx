@@ -65,27 +65,29 @@ const Todo = () => {
 	return (
 		<div className="todo-container">
 			<ListTitle setTitle={setTitle} />
-			<div className="main">
-				<h1 className="todoName">To-Do List</h1>
-				<div className="wrap">
-					<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
-					<ListActions
-						handleAddTodo={handleAddTodo}
-						handleDeleteAll={handleDeleteAll}
-						handleDeleteSelected={handleDeleteSelected}
+			<div className="asd">
+				<div className="main">
+					<h1 className="todoName">To-Do List</h1>
+					<div className="wrap">
+						<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
+						<ListActions
+							handleAddTodo={handleAddTodo}
+							handleDeleteAll={handleDeleteAll}
+							handleDeleteSelected={handleDeleteSelected}
+						/>
+					</div>
+					<TodoList
+						handleToggleSelection={handleToggleSelection}
+						selectedItems={selectedItems}
+						handleDeleteItems={handleDeleteItems}
+						todos={todos}
 					/>
-				</div>
-				<TodoList
-					handleToggleSelection={handleToggleSelection}
-					selectedItems={selectedItems}
-					handleDeleteItems={handleDeleteItems}
-					todos={todos}
-				/>
-				{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
-				<div className="listbtn">
-					<button className={classes.button} onClick={handleSaveList}>
-						Save List
-					</button>
+					{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
+					<div className="listbtn">
+						<button className={classes.button} onClick={handleSaveList}>
+							Save List
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
