@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import Todo from "../components/Todo";
+import classes from "..//pages/CreateTodo.module.css";
 
 const CreateTodo = () => {
 	return (
 		<div>
-			<button>
-				<Link to="/" style={{ color: "white" }}>
-					Back
-				</Link>
-			</button>
+			<div className={classes.wrapbtn}>
+				<button className={classes.button}>
+					<Link className={classes.backbtn} to="/">
+						Back
+					</Link>
+				</button>
+			</div>
 			<Todo />
 		</div>
 	);

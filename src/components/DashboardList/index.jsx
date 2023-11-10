@@ -1,18 +1,15 @@
 import { PropTypes } from "prop-types";
+import classes from "../DashboardList/index.module.css";
 
 export default function DashboardList({ title, content }) {
 	return (
-		<div
-			style={{
-				borderRadius: 8,
-				backgroundColor: "whitesmoke",
-				color: "#333",
-			}}
-		>
+		<div className={classes.list}>
 			<h4>{title}</h4>
-			<ul>
+			<ul className={classes.ulstyle}>
 				{content.map((item) => (
-					<li key={item.id}>{item.text}</li>
+					<li className={classes.listyle} key={item.id}>
+						{item.text}
+					</li>
 				))}
 			</ul>
 		</div>

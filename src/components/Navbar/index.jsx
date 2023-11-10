@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
+import classes from "../Navbar/index.module.css";
 
 export default function Navbar() {
 	return (
-		<ul
-			style={{
-				display: "flex",
-				gap: 10,
-			}}
-		>
-			<li>
-				<Link to={"/"}>Home</Link>
-			</li>
-			<li>
-				<Link to={"/create-list"}>Create list</Link>
-			</li>
+		<ul className={classes.menu}>
+			<div className={classes.wrap}>
+				<li>
+					<button className={classes.button}>
+						<Link className={classes.dsg} to={"/"}>
+							Home
+						</Link>
+					</button>
+				</li>
+				<button className={classes.button}>
+					<li>
+						<Link className={classes.dsg} to={"/create-list"}>
+							Create list
+						</Link>
+					</li>
+				</button>
+			</div>
 		</ul>
 	);
 }
