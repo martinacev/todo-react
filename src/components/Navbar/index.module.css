@@ -12,6 +12,7 @@
 	border: 1px solid black;
 	display: flex;
 	justify-content: flex-end;
+	z-index: 1000;
 	align-items: center;
 }
 
