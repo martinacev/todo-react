@@ -5,19 +5,16 @@ export default function Navbar() {
 	return (
 		<ul className={classes.menu}>
 			<li>
-				<button className={classes.button}>
-					<Link className={classes.dsg} to={"/"}>
-						Home
-					</Link>
-				</button>
+				<Link className={classes.btnStyle} to={"/"}>
+					Home
+				</Link>
 			</li>
-			<button className={classes.button}>
-				<li>
-					<Link className={classes.dsg} to={"/create-list"}>
-						Create list
-					</Link>
-				</li>
-			</button>
+
+			<li>
+				<Link className={classes.btnStyle} to={"/create-list"}>
+					Create list
+				</Link>
+			</li>
 		</ul>
 	);
 }
