@@ -1,0 +1,18 @@
+.wrappbtn {
+	height: 50px;
+	width: 150px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.backbtn {
+	background-color: gray;
+	border: 1px solid rgba(0, 0, 0, 0.377);
+	box-shadow: 15px 5px 5px rgba(0, 0, 0, 0.452);
+	border-radius: 15px;
+	color: white;
+	margin-left: 20px;
+	padding: 5px;
+}

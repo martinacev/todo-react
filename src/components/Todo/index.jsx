@@ -4,6 +4,7 @@ import AddtodoInput from "./AddTodoInput";
 import TodoList from "./TodoList";
 import ListTitle from "./ListTitle";
 import ButtonSelect from "./ButtonSelect";
+import classes from "./ListActions.module.css";
 
 import { v4 as uuidv4 } from "uuid";
 import { addList } from "../../store/actions/todo";
@@ -64,24 +65,30 @@ const Todo = () => {
 	return (
 		<div className="todo-container">
 			<ListTitle setTitle={setTitle} />
-			<div className="main">
-				<h1 className="todoName">To-Do List</h1>
-				<div className="wrap">
-					<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
-					<ListActions
-						handleAddTodo={handleAddTodo}
-						handleDeleteAll={handleDeleteAll}
-						handleDeleteSelected={handleDeleteSelected}
+			<div className="containerwrap">
+				<div className="main">
+					<h1 className="todoName">To-Do List</h1>
+					<div className="wrap">
+						<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
+						<ListActions
+							handleAddTodo={handleAddTodo}
+							handleDeleteAll={handleDeleteAll}
+							handleDeleteSelected={handleDeleteSelected}
+						/>
+					</div>
+					<TodoList
+						handleToggleSelection={handleToggleSelection}
+						selectedItems={selectedItems}
+						handleDeleteItems={handleDeleteItems}
+						todos={todos}
 					/>
+					{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
+					<div className="listbtn">
+						<button className={classes.btn} onClick={handleSaveList}>
+							Save List
+						</button>
+					</div>
 				</div>
-				<TodoList
-					handleToggleSelection={handleToggleSelection}
-					selectedItems={selectedItems}
-					handleDeleteItems={handleDeleteItems}
-					todos={todos}
-				/>
-				{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
-				<button onClick={handleSaveList}>Save List</button>
 			</div>
 		</div>
 	);

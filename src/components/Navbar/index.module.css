@@ -1,0 +1,38 @@
+.menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	gap: 20px;
+	width: 100%;
+	height: 50px;
+	background-color: rgb(85, 84, 84);
+	border: 1px solid black;
+	display: flex;
+	justify-content: flex-end;
+	z-index: 1000;
+	align-items: center;
+}
+
+.btn {
+	background-color: rgba(255, 3, 3, 0.63);
+	border: 1px solid rgba(0, 0, 0, 0.377);
+	box-shadow: 15px 5px 5px rgba(0, 0, 0, 0.452);
+	height: 40px;
+	width: 150px;
+	border-radius: 20px;
+}
+
+.btnStyle {
+	color: white;
+	font-size: 15px;
+	background-color: rgba(255, 3, 3, 0.63);
+	border: 1px solid black;
+	padding: 10px;
+	border-radius: 20px;
+	margin-right: 20px;
+}
+
+.wrap {
+	display: flex;
+	gap: 20px;
+}

@@ -3,12 +3,12 @@ import classes from "./ListActions.module.css";
 
 const ListActions = ({ handleAddTodo, handleDeleteAll }) => {
 	return (
-		<div className={classes.buttons}>
+		<div className={classes.handleButtons}>
 			<div className={classes.wraper}>
-				<button onClick={handleAddTodo} className={classes.button}>
+				<button onClick={handleAddTodo} className={classes.btn}>
 					Add ✔
 				</button>
-				<button onClick={handleDeleteAll} className={classes.button}>
+				<button onClick={handleDeleteAll} className={classes.btn}>
 					Delete ⨉
 				</button>
 			</div>
