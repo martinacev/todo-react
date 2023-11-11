@@ -7,7 +7,7 @@ const Home = () => {
 	const lists = useSelector((state) => state.todoLists);
 
 	return (
-		<div className={classes.wraper}>
+		<div className={classes.wrapper}>
 			<h1>Home Page</h1>
 			<div className={classes.wrap}>
 				{lists.map((list) => (

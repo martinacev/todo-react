@@ -5,12 +5,10 @@ import classes from "..//pages/CreateTodo.module.css";
 const CreateTodo = () => {
 	return (
 		<div>
-			<div className={classes.wrapbtn}>
-				<button className={classes.button}>
-					<Link className={classes.backbtn} to="/">
-						Back
-					</Link>
-				</button>
+			<div className={classes.wrappbtn}>
+				<Link className={classes.backbtn} to="/">
+					Back
+				</Link>
 			</div>
 			<Todo />
 		</div>

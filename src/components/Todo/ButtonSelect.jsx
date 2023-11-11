@@ -4,7 +4,7 @@ import classes from "./ButtonSelect.module.css";
 const ButtonSelect = ({ handleDeleteSelected }) => {
 	return (
 		<div className={classes.buttonSelect}>
-			<button className={classes.button} onClick={handleDeleteSelected}>
+			<button className={classes.btn} onClick={handleDeleteSelected}>
 				Delete Selected ⨉
 			</button>
 		</div>
