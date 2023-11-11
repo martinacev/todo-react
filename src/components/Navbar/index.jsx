@@ -4,22 +4,20 @@ import classes from "../Navbar/index.module.css";
 export default function Navbar() {
 	return (
 		<ul className={classes.menu}>
-			<div className={classes.wrap}>
-				<li>
-					<button className={classes.button}>
-						<Link className={classes.dsg} to={"/"}>
-							Home
-						</Link>
-					</button>
-				</li>
+			<li>
 				<button className={classes.button}>
-					<li>
-						<Link className={classes.dsg} to={"/create-list"}>
-							Create list
-						</Link>
-					</li>
+					<Link className={classes.dsg} to={"/"}>
+						Home
+					</Link>
 				</button>
-			</div>
+			</li>
+			<button className={classes.button}>
+				<li>
+					<Link className={classes.dsg} to={"/create-list"}>
+						Create list
+					</Link>
+				</li>
+			</button>
 		</ul>
 	);
 }

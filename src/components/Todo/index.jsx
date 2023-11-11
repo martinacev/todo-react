@@ -65,7 +65,7 @@ const Todo = () => {
 	return (
 		<div className="todo-container">
 			<ListTitle setTitle={setTitle} />
-			<div className="asd">
+			<div className="containerwrap">
 				<div className="main">
 					<h1 className="todoName">To-Do List</h1>
 					<div className="wrap">
