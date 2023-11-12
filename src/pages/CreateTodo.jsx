@@ -5,7 +5,7 @@ import classes from "..//pages/CreateTodo.module.css";
 const CreateTodo = () => {
 	return (
 		<div>
-			<div className={classes.wrappbtn}>
+			<div className={classes.wrapper}>
 				<Link className={classes.backbtn} to="/">
 					Back
 				</Link>

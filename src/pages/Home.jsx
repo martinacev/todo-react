@@ -9,7 +9,7 @@ const Home = () => {
 	return (
 		<div className={classes.wrapper}>
 			<h1>Home Page</h1>
-			<div className={classes.wrap}>
+			<div className={classes.listcontainer}>
 				{lists.map((list) => (
 					<DashboardList key={list.title} title={list.title} content={list.content} />
 				))}
