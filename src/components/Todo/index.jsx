@@ -19,17 +19,17 @@ const Todo = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const storedTodos = localStorage.getItem("todos");
-		if (storedTodos) {
-			setTodos(JSON.parse(storedTodos));
-			console.log("Todos loaded from localStorage:", JSON.parse(storedTodos));
+		const storedList = localStorage.getItem("todos");
+		if (storedList) {
+			setTodos(JSON.parse(storedList));
+			console.log("List loaded from localstorage", JSON.parse(storedList));
 		}
 	}, []);
 
 	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
-		console.log("Todos saved to localStorage:", todos);
-	}, [todos]);
+		console.log("Todos saved to localstorage");
+	});
 
 	const handleAddTodo = () => {
 		uuidv4();
@@ -73,14 +73,16 @@ const Todo = () => {
 			content: todos,
 		};
 		dispatch(addList(list));
+
+		localStorage.setItem("todos", JSON.stringify(todos));
 	};
 
 	return (
 		<div className="todo-container">
 			<ListTitle setTitle={setTitle} />
-			<div className="containerwrap">
+			<div className="container-wrap">
 				<div className="main">
-					<h1 className="todoName">To-Do List</h1>
+					<h1 className="todo-name">To-Do List</h1>
 					<div className="wrap">
 						<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
 						<ListActions
@@ -96,7 +98,7 @@ const Todo = () => {
 						todos={todos}
 					/>
 					{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
-					<div className="listbtn">
+					<div className="list-btn">
 						<button className={classes.btn} onClick={handleSaveList}>
 							Save List
 						</button>
