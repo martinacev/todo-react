@@ -22,13 +22,11 @@ const Todo = () => {
 		const storedList = localStorage.getItem("todos");
 		if (storedList) {
 			setTodos(JSON.parse(storedList));
-			console.log("List loaded from localstorage", JSON.parse(storedList));
 		}
 	}, []);
 
 	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
-		console.log("Todos saved to localstorage");
 	});
 
 	const handleAddTodo = () => {
