@@ -56,6 +56,7 @@ const Todo = () => {
 
 	const handleSaveList = () => {
 		const list = {
+			id: uuidv4(),
 			title: title,
 			content: todos,
 		};
@@ -65,9 +66,9 @@ const Todo = () => {
 	return (
 		<div className="todo-container">
 			<ListTitle setTitle={setTitle} />
-			<div className="containerwrap">
+			<div className="container-wrap">
 				<div className="main">
-					<h1 className="todoName">To-Do List</h1>
+					<h1 className="todo-name">To-Do List</h1>
 					<div className="wrap">
 						<AddtodoInput value={newTodo} setValue={setNewTodo} handleAdd={handleAddTodo} />
 						<ListActions
@@ -83,7 +84,7 @@ const Todo = () => {
 						todos={todos}
 					/>
 					{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
-					<div className="listbtn">
+					<div className="list-btn">
 						<button className={classes.btn} onClick={handleSaveList}>
 							Save List
 						</button>

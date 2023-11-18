@@ -9,7 +9,7 @@ const ListActions = ({ handleAddTodo, handleDeleteAll }) => {
 					Add ✔
 				</button>
 				<button onClick={handleDeleteAll} className={classes.btn}>
-					Delete ⨉
+					Delete All ⨉
 				</button>
 			</div>
 		</div>
