@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import classes from "../DashboardList/index.module.css";
+
 import { useDispatch } from "react-redux";
 import { deleteList } from "../../store/actions/todo";
 
@@ -9,7 +10,7 @@ export default function DashboardList({ id, title, content }) {
 	const handleDeleteList = () => {
 		dispatch(deleteList(id));
 	};
-
+  
 	return (
 		<div className={classes.list}>
 			<h4>{title}</h4>

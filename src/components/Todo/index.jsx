@@ -66,6 +66,7 @@ const Todo = () => {
 	return (
 		<div className="todo-container">
 			<ListTitle setTitle={setTitle} />
+
 			<div className="container-wrap">
 				<div className="main">
 					<h1 className="todo-name">To-Do List</h1>
@@ -84,7 +85,9 @@ const Todo = () => {
 						todos={todos}
 					/>
 					{todos.length > 1 && <ButtonSelect handleDeleteSelected={handleDeleteSelected} />}
+
 					<div className="list-btn">
+
 						<button className={classes.btn} onClick={handleSaveList}>
 							Save List
 						</button>
