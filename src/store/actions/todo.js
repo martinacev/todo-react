@@ -4,3 +4,10 @@ export const addList = (payload) => {
 		payload: payload,
 	};
 };
+
+export const deleteList = (id) => {
+	return {
+		type: "DELETE_LIST",
+		payload: id,
+	};
+};

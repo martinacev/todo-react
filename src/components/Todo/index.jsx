@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ListActions from "./ListActions";
 import AddtodoInput from "./AddTodoInput";
 import TodoList from "./TodoList";
@@ -17,17 +17,6 @@ const Todo = () => {
 	const [title, setTitle] = useState();
 
 	const dispatch = useDispatch();
-
-	useEffect(() => {
-		const storedList = localStorage.getItem("todos");
-		if (storedList) {
-			setTodos(JSON.parse(storedList));
-		}
-	}, []);
-
-	useEffect(() => {
-		localStorage.setItem("todos", JSON.stringify(todos));
-	});
 
 	const handleAddTodo = () => {
 		uuidv4();
@@ -67,12 +56,11 @@ const Todo = () => {
 
 	const handleSaveList = () => {
 		const list = {
+			id: uuidv4(),
 			title: title,
 			content: todos,
 		};
 		dispatch(addList(list));
-
-		localStorage.setItem("todos", JSON.stringify(todos));
 	};
 
 	return (
